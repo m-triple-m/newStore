@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <h2>Thank You for your Reservation</h2>
+    <br>
+    <p>You will recieve an email shortly with your reservation details.</p>
+</div>
+<div class="container">
+    <h3>What's Next ?</h3>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <h1>1</h1><p>Confirm</p>
+            <br>
+            <p>We will call you within 24 hours to confirm your reservation and answer any question you might have.</p>
+        </div>
+        <div class="col-md-4">
+            <h1>2</h1><p> Pack</p><br>
+            <p>Get your stuff ready for moving in.<br>See your tips on how to pack and protect your belongings.</p>
+        </div>
+        <div class="col-md-4">
+            <h1>3</h1> <p>Move In</p><br>
+            <p>Come to your property any time before or on moving in day to sign your rental contract.</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h4>Pack like a pro with our moving boxes and packing materials</h4>
+    <a [routerLink]="['/#']" routerLinkActive="router-link-active" >See our full range of products.</a>
+</div>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <p>Your Reservation Number is {{reserveorder.Reservation}} </p>
+        </div>
+        <div class="card-body">
+            <div class="card col-md-6 ">
+                <div class="mt-5">
+                    <div class="row">
+                        <label class="col-md">Your Details :</label>
+                        <div class="col-md-2"></div>
+                       <div class="col-md">
+                        <h5>{{reserveorder.first}}{{reserveorder.last}}</h5>
+                        <p>{{reserveorder.email}}<br> {{reserveorder.phone}} </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md">Location : </label>
+                        <div class="col-md-2"></div>
+                        <div class="col-md">
+                            <h5> {{reserveorder.locality}} </h5>
+                        <p>{{reserveorder.address}},{{reserveorder.city}}
+                            <br>{{reserveorder.state}}-{{reserveorder.pin}}
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </div>
+</div>

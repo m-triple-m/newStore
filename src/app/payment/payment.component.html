@@ -1,0 +1,68 @@
+<div class="container mt-5">
+    <h2>Reserve Your Unit for Free</h2>
+</div>
+<div class="container mt-3">
+   <div class="row">
+    <div class=" container col-md-6">
+        <mat-card >
+            <label for="">Size :  </label><h5>{{areareq}} sq ft </h5><br>
+            <label for="">Height : <h5>approx 10 feet</h5></label><br>
+            <img src="assets/10sq.PNG" style="padding-left: 80px;width:8cm;height: 6cm;">
+            
+            <mat-card-content>
+                <label for="">PRICE : </label>
+                <h5>Rs {{location.price}} / month </h5>
+                <label for="" style="font-size: 18px;">Location : </label>
+                <h5> {{location.locality}}<br>
+                    {{location.address}},
+                    {{location.city}}<br>
+                    {{location.state}}-
+                {{location.pincode}}</h5>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class=" container col-md-6">
+        <mat-card style="background-color: rgba(138, 230, 230, 0.239);">
+            <mat-card-content>
+                <h2>Reserve now</h2>
+                <br>
+                <div class="row" style="padding-left: 10px;">
+                    <mat-icon matPreffix>check_circle</mat-icon>
+                    <label>No obligation to rent</label>
+                </div>
+                <div class="row" style="padding-left: 10px;">
+                    <mat-icon matPreffix>check_circle</mat-icon>
+                <p>No credit card required</p>
+                </div>
+                <form [formGroup]="reserveform" (submit)="reserveSubmit(reserveform.value)" *ngIf="reserveform">
+                    <mat-form-field style="width:100%;" >
+                        <input matInput placeholder="First Name" formControlName="first">
+                    </mat-form-field>
+                    <mat-form-field style="width:100%;" >
+                        <input matInput placeholder="Last Name" formControlName="last">
+                    </mat-form-field>
+                    <mat-form-field style="width:100%;" >
+                        <input matInput placeholder="Phone no." formControlName="phone">
+                    </mat-form-field>
+                    <mat-form-field style="width:100%;">
+                        <input matInput placeholder="Email Address" formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field style="width:100%">
+                        <mat-label>I need storage from </mat-label>
+                        <input matInput [matDatepicker]="picker"  formControlName="date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field><br>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button mat-raised-button style="background-color: rgba(219, 219, 52, 0.678);" >MAKE A FREE RESERVATION</button>
+                            
+                        </div>
+                    </div>
+                
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+   </div>
+</div>

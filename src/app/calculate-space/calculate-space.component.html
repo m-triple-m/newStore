@@ -1,0 +1,104 @@
+<div class="container mt-5">
+    <!-- <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <h1 class="col-md">List Of Rooms</h1>
+                <div class="col-md"></div>
+                <h4 class=" col-md" style ="text-align: end;">Total Space required:{{totalArea}}</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <ul class="list-group" *ngFor="let room of all_rooms;let ri = index">
+                <li class="list-group-item">
+                    <div class="row">
+                        <h3 class="col-md-4">{{room.name}}</h3>
+                        <p class="col-md-4"></p>
+                        <!-- <h5 class="col-md-4">Space Required : {{RoomArea1}} </h5> -->
+    <!-- </div>
+
+                </li>
+                <div class="">
+                    <li class="list-group-item" *ngFor="let thing of room.things;let ti = index">
+
+                        
+                            <div class="row">
+                                <img class="col-md-1" [src]="thing.url" style="height: 15mm;width: 15mm;">
+                                <div class=""></div>
+                                <p class="col-md" style="font-size:25px;">&nbsp;&nbsp;&nbsp;&nbsp;{{thing.name}}</p>
+                                <p class="col-md" style="font-size:25px;">&nbsp;&nbsp;<button (click)= "removeThing(ri,ti)"
+                                    class="btn btn-danger">-</button>&nbsp;&nbsp;{{thing.count}}&nbsp;&nbsp;<button (click)= "addThing(ri,ti)"
+                                        class="btn btn-primary">+</button></p>
+                                <p class="col-md"> &nbsp;&nbsp;&nbsp;&nbsp; Space Required : {{thing.spacereq}}  sq ft</p>
+                            </div>
+                        
+
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div> -->
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <h1 class="col-md">List Of Rooms</h1>
+                <div class="col-md"></div>
+                <h4 class=" col-md" style="text-align: end; padding-top: 12px;">{{totalArea}} sq ft</h4>
+            </div>
+        </div>
+        <div class="card-body" style="background-color: rgba(186, 200, 240, 0.322);">
+            <mat-accordion>
+                <mat-expansion-panel class="list-group" *ngFor="let room of all_rooms;let ri = index"
+                    style="background-color: rgb(186, 200, 240, 0.322);">
+                    <mat-expansion-panel-header>
+
+                        <mat-panel-title>
+
+                            <h3 class="col-md" style="padding-top: 5px;">{{room.name}}</h3>
+                            <h5 class="col-md" style="text-align: center;padding-top: 10px;">{{room.area}} sq ft </h5>
+                            <button class="btn" style="color: rgba(255, 0, 0, 0.822);" (click)="resetRoom(ri)">Empty
+                                this room <mat-icon>delete</mat-icon></button>
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <div class="">
+                        <li class="list-group-item" *ngFor="let thing of room.things;let ti = index"
+                            style="background-color: rgba(240, 242, 245, 0.884);">
+
+
+                            <div class="row">
+                                <img class="col-md-1 img-fluid" [src]="thing.url" style="height: 15mm;width: 15mm; ">
+                                <div class=""></div>
+                                <p class="col-md" style="font-size:25px;padding: 15px ;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{{thing.name}}</p>
+                                <p class="col-md" style="font-size:25px;padding: 15px ;">&nbsp;&nbsp;<button
+                                        (click)="removeThing(ri,ti)"
+                                        class="btn btn-danger">-</button>&nbsp;&nbsp;{{thing.count}}&nbsp;&nbsp;<button
+                                        (click)="addThing(ri,ti)" class="btn btn-primary">+</button></p>
+                                <p class="col-md" style="font-size:20px;padding: 15px ;"> &nbsp;&nbsp;&nbsp;&nbsp; Space
+                                    Required : {{thing.spacereq}} sq ft</p>
+                            </div>
+
+
+                        </li>
+                    </div>
+                    <br>
+                </mat-expansion-panel>
+
+            </mat-accordion>
+        </div>
+        <div class="card-footer">
+            <!-- <div class="row">
+                <p class="col-md-2"></p>
+                <h5 class="col-md-3"> Total Space Required : {{totalArea}}</h5>
+                <h5 class="col-md-5" style="text-align: end;"> Rate for Rent per sq ft for 1 month : Rs 100 </h5>
+                <p class="col-md-2"></p>
+            </div> -->
+            <div class="mt-3">
+            
+            <h2 class="col-md" style="text-align: center;"> You will need  {{totalArea}} sq ft</h2>
+            <br>
+            <button  class="btn btn-block" [routerLink]="['/browse']" routerLinkActive="router-link-active" style="font-size: 22px;background-color: cadetblue;"   >Make a Reservation</button>
+            </div>
+        </div>
+    </div>
+</div>

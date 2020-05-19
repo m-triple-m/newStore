@@ -1,0 +1,29 @@
+<div class="">
+    <button mat-raised-button color="primary" [routerLink]="['/place']" routerLinkActive="router-link-active" >Add New Location</button>
+</div>
+<mat-card>
+    <mat-card-content>
+        <div class="card-body">
+            <p class="h3">Available Locations</p>
+            <hr>
+        </div>
+        
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let location of locations">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h6>{{location.state}}</h6>
+                </mat-panel-title>
+                <mat-panel-description>
+                    City : {{location.city}}
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Address : {{location.address}}</p>
+                <p>Pincode : {{location.pincode}}</p>
+                <hr>
+                <p>Price : {{location.price}}</p>
+                <p>Free Area : {{location.area}}</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>

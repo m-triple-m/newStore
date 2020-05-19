@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+       <div *ngFor="let location of locations,let i=index">
+        <mat-card  style="background-color: rgba(178, 229, 236, 0.479);width: 8cm;">
+            <mat-card-header >
+                <mat-card-title>
+                    <mat-icon matPrefix>account_circle</mat-icon>
+                    <mat-label>Location {{i+1}}</mat-label>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <label for="">State : {{location.state}}</label><br>
+                <label for="">City : {{location.city}} </label><br>
+                <label for=""> Address : {{location.address}} </label><br>
+                <label for=""> Area Remaining : {{location.area}} sq ft </label><br>
+                <label for="">Pincode : {{location.pincode}} </label>
+            </mat-card-content>
+        </mat-card>
+        <div class="col-md-1"></div>
+       </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+
+<div class="container-fluid mt-5">
+    <p class="text-center display-4">Admin Dashboard</p>
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-2" style="border-right: 1px solid rgb(194, 194, 194);height: 300px">
+
+            <mat-card matRipple>
+                <mat-card-content class="card-body">
+                    <!-- <img [src]="user.avatar" class="rounded-circle" height="100px"> -->
+                    <p class="h6">{{admin.name}}</p>
+                    <p>{{admin.email}}</p>
+                    <hr>
+                    <p>{{admin.address}}</p>
+                    <p>{{admin.pincode}}</p>
+                    <p>{{admin.mobile}}</p>
+                </mat-card-content>
+            </mat-card>
+
+            <button class="btn-block mt-5" mat-raised-button (click)="toggleStats()">Statistics</button>
+            <button class="btn-block" mat-raised-button (click)="toggleUsers()">Registered Users</button>
+            <button class="btn-block" mat-raised-button (click)="toggleOrders()">Orders</button>
+            <button class="btn-block" mat-raised-button (click)="toggleLocs()">Manage Locations</button>
+
+        </div>
+
+        <div class="col">
+            <app-website-stats [users]="users" [orders]="orders" [locations]="locations" *ngIf="users && orders && showstats && locations"></app-website-stats>
+            <app-browse-orders [orders]="orders" *ngIf="showorders && orders"></app-browse-orders>
+            <app-browse-locations [locations]="locations" *ngIf="showlocs && locations" ></app-browse-locations>
+            <app-browse-users [users]="users" *ngIf="showusers && users"></app-browse-users>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container mt-5">
+    <div class="row">
+        <mat-card style="width: 7cm;align-content: center;" (click)="usercomponent(01)" matRipple>
+            <mat-card-content >
+                <img mat-card-image src="assets/users.png">
+                <h2 class="text-center" >No. of Users Registered</h2>
+            </mat-card-content>
+        </mat-card>
+        <hr>
+        <mat-card  style="width: 7cm;align-content: center;" (click)="usercomponent(02)" matRipple>
+            <mat-card-content>
+                <img mat-card-image src="assets/locations.png" style="height: 6cm;width: 7cm;">
+                <h2 class="text-center">No. of Storage Locations Registered</h2>
+            </mat-card-content>
+        </mat-card>
+        <hr>
+        <mat-card  style="width: 7cm;align-content: center;" (click)="usercomponent(03)" matRipple>
+            <mat-card-content >
+                <img mat-card-image src="assets/Registration.png" style="height: 6cm;width: 7cm;padding-left: 10px;">
+                <h2 class="text-center" >Storage Place Registration</h2>
+            </mat-card-content>
+        </mat-card>
+        <hr>
+        <mat-card  style="width: 7cm;align-content: center;" (click)="usercomponent(04)" matRipple>
+            <mat-card-content >
+                <img mat-card-image src="assets/users.png" alt="">
+                <h2 class="text-center" >Website Statistics</h2>
+            </mat-card-content>
+        </mat-card>
+        
+        <mat-card  style="width: 7cm;align-content: center;" (click)="usercomponent(05)" matRipple class="mt-5">
+            <mat-card-content >
+                <img mat-card-image src="assets/users.png" alt="">
+                <h2 class="text-center" >No. of orders</h2>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div> -->

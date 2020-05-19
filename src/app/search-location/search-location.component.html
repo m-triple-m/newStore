@@ -1,0 +1,42 @@
+<div class="container mt-5">
+
+    <div class="search-area">
+        <div class="input-group col-md-6 ml-auto">
+            <input class="form-control" #loc>
+            <div class="input-group-append" style="color: rgba(95, 158, 160, 0.911);" (click)="searchLocation(loc.value)"><button mat-raised-button style="background-color: rgba(49, 197, 202, 0.904);">Search</button></div>
+            
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header" style="background-color: rgba(49, 197, 202, 0.582);">
+            <h2 style="padding-top: 15px;">List of Locations</h2>
+        </div>
+        <div class="card-body" style="background-color: rgba(177, 228, 230, 0.582);">
+            <div *ngFor="let item of locations;let i = index" >
+                <div class="row">
+                    <div class="col-md-2">
+                        {{item.state}}
+                    </div>
+                    <div class="col-md-2" >
+                       <a [routerLink]="['/book', item.city]" routerLinkActive="router-link-active">{{item.city}}</a> 
+                    </div>
+                    <div class="col-md-4">
+                        {{item.address}}
+                    </div>
+                    <div class="col-md-2"  >
+                        {{item.area}} sq ft
+                    </div>
+                    <div class="col-md-2">
+                        {{item.pincode}}
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <!-- <div class="card-footer text-center">
+            <p> Now  <a [routerLink]="['/calcloc']" routerLinkActive="router-link-active" >Click Here</a> to calculate your space requirement</p>
+        </div> -->
+    </div>
+    
+
+</div>

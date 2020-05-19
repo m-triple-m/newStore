@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+       <div *ngFor="let user of regusers,let i=index">
+        <mat-card  style="background-color: rgba(178, 229, 236, 0.479);width: 8cm;">
+            <mat-card-header >
+                <mat-card-title>
+                    <mat-icon matPrefix>account_circle</mat-icon>
+                    <mat-label>{{user.username}}</mat-label>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <label for="">Username : {{user.username}}</label><br>
+                <label for="">Name : {{user.name}} </label><br>
+                <label for=""> Address : {{user.address}} </label><br>
+                <label for=""> Mobile No. : {{user.mobile}} </label><br>
+                <label for="">Email id : {{user.email}} </label><br>
+                <label for="">Pincode : {{user.pincode}} </label><br>
+                <label for="">City : {{user.city}} </label><br>
+                <label for="">State : {{user.state}} </label><br>
+                <label for="">Admin : {{user.admin}}</label><br>
+                <label for="">Date Created : {{user.created}} </label>
+            </mat-card-content>
+        </mat-card>
+        <div class="col-md-1"></div>
+       </div>
+    </div>
+</div>

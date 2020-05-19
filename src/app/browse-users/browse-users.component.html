@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-content>
+        <div class="card-body">
+            <p class="h3">Registered Users</p>
+            <hr>
+        </div>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let user of users">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h6>{{user.name}}</h6>
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{user.email}}
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Address : {{user.address}}</p>
+                <p>Pincode : {{user.pincode}}</p>
+                <hr>
+                <p>Mobile : {{user.mobile}}</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>

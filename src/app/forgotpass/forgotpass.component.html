@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <p class="text-center h1">Reset Your Password</p>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card" style="background-color: rgba(163, 183, 221, 0.328);">
+                <div class="card-body">
+                    <label>Email</label>
+                    <input class="form-control" #email>
+                    <button (click)="sendOTP(email.value)" class="mt-2 btn btn-primary">Submit</button>
+                </div>
+            </div>
+            <div class="card" style="background-color: rgba(163, 183, 221, 0.328);" *ngIf="showReset">
+                <div class="card-body">
+                    <form [formGroup]="resetForm" (submit)="resetPassword(resetForm.value)">
+                        <label>Enter Otp</label>
+                        
+                            <input class="form-control" formControlName="otp"(change)="resetPassword(resetForm.value)">
+                            <div *ngIf="show" >
+                        <label>Enter New Password </label>
+                        <input class="form-control" formControlName="new">
+                        <label>Enter Confirm Password</label>
+                        <input class="form-control" formControlName="confirm">
+                        <button class="btn btn-danger mt-5 btn-block">RESET Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

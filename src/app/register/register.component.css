@@ -1,0 +1,13 @@
+.label{
+    color: cyan;
+    font-size:larger;
+    
+}
+
+.img-col{
+    background: url('../../assets/reg-bg.jpg');
+    height: 47rem;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+    <h3 class="text-center">Do You Need Storage for personal or business use ? </h3>
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-2" *ngFor="let opt of items,let i=index">
+        <mat-card (click)="setUsage(i)" class="item card-body" [class]="getUsageClass(i)" style="height: 8cm;" matRipple >
+          
+            <div class="text-center" style="height: 4cm;">
+              <img [src]="opt.img" class="img-fluid">
+              
+            </div>
+            <div class="text-center">
+              <p class="mt-5">{{opt.name}}</p>
+            </div>
+            <div class="row justify-content-center mx-auto" *ngIf="opt.count != undefined">
+              
+              <button class="btn btn-danger" (click)="delCount(i)"><fa-icon [icon]="dec"></fa-icon></button>
+              <h3>{{opt.count}}</h3>&nbsp;
+              <button class="btn btn-primary" (click)="addCount(i)"><fa-icon [icon]="inc"></fa-icon></button>&nbsp;
+              
+            </div>
+          
+        </mat-card>
+      </div>
+    </div>
+  </div>

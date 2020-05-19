@@ -1,0 +1,33 @@
+.bg-place{
+    background:
+    linear-gradient(30deg,rgba(250, 248, 248, 0.171) ,rgba(250, 249, 246, 0.171) 30%),
+    linear-gradient(90deg,rgba(239, 243, 237, 0.322) ,rgba(239, 239, 241, 0.322) 30%),
+    linear-gradient(120deg,rgba(212, 215, 226, 0.171) ,rgba(233, 224, 231, 0.171) 30%),
+    linear-gradient(180deg,rgba(247, 243, 243, 0.322) ,rgba(245, 241, 241, 0.322) 30%),
+    url('/assets/sp.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;
+}
+.bg-place1{
+    background: 
+    /* linear-gradient(30deg,rgba(250, 248, 248, 0) ,rgba(250, 249, 246, 0.349) 30%),
+    linear-gradient(90deg,rgba(239, 243, 237, 0.438) ,rgba(239, 239, 241, 0.349) 30%),
+    linear-gradient(120deg,rgba(212, 215, 226, 0.438) ,rgba(233, 224, 231, 0.349) 30%),
+    linear-gradient(180deg,rgba(247, 243, 243, 0) ,rgba(245, 241, 241, 0.349) 30%),/ */
+    url('/assets/sp1.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;
+}
+.bg-place2{
+    background: 
+     linear-gradient(90deg,rgba(250, 248, 248, 0.623) ,rgba(250, 249, 246, 0.349) 30%),
+    
+    url('/assets/sp3.jpg');background-repeat: no-repeat;background-position: center; background-position: center;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.user-dash{
+    background-color: whitesmoke;
+}
+
+.bg-admin{
+    background-color: whitesmoke;
+}

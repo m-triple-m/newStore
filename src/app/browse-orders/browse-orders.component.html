@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-content>
+        <p class="h4">All Booked Orders</p>
+        <hr>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let order of orders">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h6>{{order.first}} {{order.last}}</h6>
+                </mat-panel-title>
+                <mat-panel-description>
+                    Booked {{order.orderdate | date}}
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Phone : {{order.phone}}</p>
+                <p>Email : {{order.email}}</p>
+                <p>Book Date : {{order.date}}</p>
+                <p>Reservation Number : {{order.reservation}}</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>

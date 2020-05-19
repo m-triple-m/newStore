@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-11">
+      <mat-card style="background-color: #dbfafa;">
+        <mat-card-content >
+          <mat-horizontal-stepper style="background-color: #dbfafa;">
+
+            <mat-step>
+          <!-- step1 -->
+              <ng-template matStepLabel></ng-template>
+              <app-item [items] = "getStep1()" (getUsage) = "setUsage1($event)"></app-item>
+              <div class="row justify-content-center mt-5">
+                <button mat-fab matStepperNext class="nav-btn" [disabled]="usage1 == undefined"><fa-icon [icon]="next"></fa-icon></button>
+              </div>
+          
+            </mat-step>
+          
+            <mat-step>
+          <!-- step2 -->
+              <ng-template matStepLabel></ng-template>
+              <app-item [items] = "getStep2()" (getUsage) = "setUsage2($event)" *ngIf="usage1!=undefined"></app-item>
+              <div class="row justify-content-center mt-5">
+                <button mat-fab matStepperNext class="nav-btn" [disabled]="usage2 == undefined"><fa-icon [icon]="next"></fa-icon></button>
+              </div>
+          
+            </mat-step>
+          
+            <mat-step>
+          <!-- step3 -->
+              <ng-template matStepLabel></ng-template>
+              <app-item [items] = "getStep3()" (getUsage) = "setUsage3($event)" (getSpace) = "setSpace($event)" *ngIf="usage2!=undefined"></app-item>
+              <div class="row justify-content-center mt-5">
+                <button mat-fab matStepperNext class="nav-btn" [disabled]="usage3 == undefined"><fa-icon [icon]="next"></fa-icon></button>
+              </div>
+          
+            </mat-step>
+          
+            <mat-step>
+          <!-- step4 -->
+              <ng-template matStepLabel></ng-template>
+              <app-item [items] = "getStep4()" (getUsage) = "setUsage4($event)" (getSpace) = "setSpace($event)" *ngIf="usage3!=undefined"></app-item>
+              <div class="row justify-content-center mt-5">
+                <button mat-fab matStepperNext class="nav-btn" [disabled]="usage4 == undefined"><fa-icon [icon]="next"></fa-icon></button>
+              </div>
+          
+            </mat-step>
+          
+            
+            <!-- <mat-step>
+              <app-search-location (getLocation)="setLocation($event)" [locations] = "locations"></app-search-location>
+              <div class="row justify-content-center mt-5">
+                <button mat-button matStepperPrevious style="background-color:rgba(96, 185, 207, 0.904)">Back</button>
+                &nbsp;&nbsp;
+                <button mat-button matStepperNext style="background-color:rgba(96, 185, 207, 0.904)" (click)="setLocationDetails()">Next</button>
+              </div>
+            </mat-step> -->
+            <mat-step>
+              <ng-template matStepLabel>Results</ng-template>
+              <!-- <div class="container">
+                <div class="container" *ngFor="let loc of locations" >
+                  <div class="card">
+                    <div class="card-header">
+                      <h4>{{loc.locality}}</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <img class="col-md" src="assets/10sq.PNG" style="height: fit-content;width: fit-content;">
+                        <label for="">10 sq ft</label>
+                        <div class="col-md-1"></div>
+                        <label for="">{{loc.address}}</label>
+                        <label for="">Rs {{loc.price}} / month</label>
+                        <button (click)="setDetails(loc)">-></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <div class="container" *ngIf="locations">
+                <mat-card *ngFor="let loc of locations">
+                  <mat-card-header>
+                    <h2>{{loc.locality}}</h2>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img src="assets/10sq.PNG" alt="" style="height: 4cm;">
+                      </div>
+                      <div class="col-md-2">
+                        <h5>{{loc.area}} sq ft</h5>
+                      </div>
+                      <div class="col-md-3">
+                        <h5>{{loc.address}}<br>{{loc.pincode}}<br>{{loc.city}},{{loc.state}}</h5>
+                      </div>
+                      <div class="col-md-3">
+                        <h5>Rs {{loc.price}} /month</h5>
+                      </div>
+                      <div class="col-md" style="text-align: end;">
+                        <button class="btn" (click)="bookLocation(loc)"><img src="assets/arrow.png" alt=""></button>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
