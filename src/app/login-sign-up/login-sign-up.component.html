@@ -1,4 +1,4 @@
-<p class="tip"></p>
+<!-- <p class="tip"></p>
 <div class="cont" #page [ngClass]="{'s--signup' : signup, 'cont': true}">
     <div class="form sign-in">
         <h2>Welcome back,</h2>
@@ -47,4 +47,128 @@
             <button type="button" class="submit">Sign Up</button>
         </div>
     </div>
-</div>
+</div> -->
+
+
+<div class="cont" [class]="signup?'s--signup':''">
+    <div class="form sign-in">
+      <h2>Welcome</h2>
+      <!-- a form-group is created using the variable and function in typescript file -->
+      <form [formGroup]="loginform" (submit)="loginsubmit(loginform.value)">
+        <!-- input field for entering username is created. Field is accompanied by placeholder and icon -->
+          <mat-form-field class="col-md-5 hc-p">
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="Rohit Khanna" formControlName="username">
+              <mat-icon matSuffix>account_circle</mat-icon>
+              <mat-error *ngIf ="returnControls1('username').errors">User Name is required</mat-error>
+          </mat-form-field>
+          <div class="col-md-1"></div>
+          <!-- input field for password, accompanied by placeholder, icon and error displayin when field is left blank -->
+          <mat-form-field class="col-md-5 hc-p">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="*****" formControlName="password" type="password">
+              <mat-icon matSuffix>lock</mat-icon>
+              <mat-error *ngIf ="returnControls1('password').errors">Password is required</mat-error>
+          </mat-form-field>
+          <div class="forgot-pass">
+            <a class="no" href="http://localhost:4200/manage-password">Forgot Password?</a>
+          </div>
+        <!-- on the click of this button, the credentials are checked -->
+        <button class="submit">Sign In</button>
+        </form>
+     </div>
+   
+   
+   
+   
+   
+  
+  
+  
+  
+     <div class="sub-cont">
+      <div class="img">
+        <div class="img__text m--up">
+          <h2>New here?</h2>
+          <p>Sign up and start shopping with us!</p>
+        </div>
+        <div class="img__text m--in">
+          <h2>One of us?</h2>
+          <p>If you already have an account, just sign in. We've missed you!</p>
+        </div>
+        <div class="img__btn" (click)="togglesignup()">
+          <span class="m--up">Sign Up</span>
+          <span class="m--in">Sign In</span>
+        </div>
+      </div>
+  
+  
+      
+      
+      
+      <div class="form sign-up">
+        <h2>Register with us!</h2>
+        
+        <form class="jc-p" [formGroup]="userform" (submit)="userSubmit(userform.value)">
+          
+                          <mat-form-field style="font-size: small;" class="col-md-9 mt-3">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Rohit" formControlName="name">
+              <mat-error *ngIf="returnControls().name.errors">Name is Required</mat-error>
+          </mat-form-field>
+          <mat-form-field style="font-size: small;" class="col-md-9 mt-3">
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="rohit@123" formControlName="username">
+              <mat-error *ngIf="returnControls().username.errors">Username is Required</mat-error>
+          </mat-form-field>
+  
+          <div class="row">
+               <mat-form-field style="font-size: small;" class="col-md-4 mt-3">
+                  <mat-label>Age</mat-label>
+                  <input matInput placeholder="22" formControlName="age">
+                  <mat-error *ngIf="returnControls().age.errors">Age is Required</mat-error>
+               </mat-form-field>
+          <div class="col-md-1"></div>
+          <mat-form-field style="font-size: small;" class="col-md-4 mt-3">
+              <mat-label>Contact</mat-label>
+              <input matInput placeholder="9886756***" formControlName="contact">
+              <mat-error *ngIf="returnControls().contact.errors">Contact is Required</mat-error>
+          </mat-form-field>
+          </div>
+          <mat-form-field style="font-size: small;" class="col-md-9 mt-3">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Rohit@gmail.com" formControlName="email">
+              <mat-error *ngIf="returnControls().email.errors">Email is Required</mat-error>
+          </mat-form-field>
+  
+          <div class="row">
+          <mat-form-field style="font-size: small;" class="col-md-4 mt-3">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Anything" formControlName="password" [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="returnControls().password.errors">Password is Required</mat-error>
+          </mat-form-field>
+          <div class="col-md-1"></div>
+          <mat-form-field style="font-size: small;" class="col-md-4 mt-3">
+              <mat-label>Confirm</mat-label>
+              <input matInput placeholder="Anything" formControlName="confirm" [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="returnControls().confirm.errors">Passwords must match</mat-error>
+          </mat-form-field>
+        
+        </div>
+  
+            
+            <button class="submit" >Sign Up</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  
+  <a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
+    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
+  </a>

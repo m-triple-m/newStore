@@ -31,3 +31,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .bg-admin{
     background-color: whitesmoke;
 }
+
+.bg-rg{
+    background-image: linear-gradient(to bottom right, rgb(62, 59, 82), rgb(85, 0, 141));
+}

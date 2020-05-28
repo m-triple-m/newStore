@@ -5,9 +5,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
+  loggedin = false;
   url="http://localhost:3000";
   
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { 
+    if(sessionStorage.getItem('user')){
+      this.loggedin = true;
+    }
+  }
 
   addUser(formdata){
     return this.httpClient.post(this.url+'/user/add',formdata);
