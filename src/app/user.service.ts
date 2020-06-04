@@ -44,7 +44,13 @@ export class UserService {
   getorder(){
     return this.httpClient.get(this.url+'/order/getall');
   }
-  
+
+  getUserByEmail(email){
+    return this.httpClient.get(this.url+'/user/getbyemail/'+email);
+  }
+  changePassword(id, paswrd){
+    return this.httpClient.put(this.url+'/user/update/'+id, {password : paswrd});
+  }
 
   }
 

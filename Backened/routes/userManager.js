@@ -74,7 +74,31 @@ router.get('/getbyusername/:username',(req,res)=>{
     })
 })
 
+router.get('/getbyemail/:email',(req,res)=>
+{
+    email=req.params.email;
+    models.findOne({email : email})
+    .then((data)=>{
+        console.log(data)
+        res.status(200).json(data);
+    })
+    .catch((err)=>{
+        res.status(500).json(err);
+    })
+})
 
+router.put('/update/:id',(req,res)=>{
+    data=req.body;
+    
+    models.findByIdAndUpdate(req.params.id, data)
+    .then((data)=>{
+        console.log(data)
+        res.status(200).json(data);
+    })
+    .catch((err)=>{
+        res.status(500).send(err.message);
+    })
+})
 
 
 module.exports = router;

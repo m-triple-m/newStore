@@ -20,7 +20,7 @@ export class LoginGuard implements CanActivate {
         icon: 'error',
         title: 'Oops...',
         text: 'You need to login to continue',})
-         this.router.navigate(['/login']);
+         this.router.navigate(['/signup']);
     }
     
     

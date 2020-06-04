@@ -7,12 +7,20 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  url="http://localhost:3000/user"
+  url="http://localhost:3000/user";
+  isadmin = false;
   loggedin=false;
+  currentUser;
   constructor( private http:HttpClient,private router : Router) { 
     if(sessionStorage.getItem('user')){
       this.loggedin=true;
     }
+
+    this.currentUser = JSON.parse(sessionStorage.getItem('user'));
+    if(this.currentUser)
+      if(this.currentUser.admin){
+        this.isadmin = true;
+      }
   }
 
 
@@ -26,6 +34,7 @@ export class AuthService {
     console.log("logged out")
     sessionStorage.removeItem('user');
     this.loggedin=false;
-    this.router.navigate(['/login']);
+    this.isadmin = false;
+    this.router.navigate(['/signup']);
   }
 }

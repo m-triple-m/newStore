@@ -20,6 +20,7 @@ import { LoginSignUpComponent } from './login-sign-up/login-sign-up.component';
 import { ResultsComponent } from './results/results.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowseSpaceComponent } from './browse-space/browse-space.component';
+import { AdminGuard } from './guards/admin.guard';
 
 
 const routes: Routes = [
@@ -30,7 +31,7 @@ const routes: Routes = [
   {path: 'forgot',component: ForgotpassComponent},
   {path:'userdash' , component:UserDashboardComponent}, //pending
   {path:'place',component:RegisterPlaceComponent},
-  {path:'admin',component:AdminDashboardComponent},
+  {path:'admin',component:AdminDashboardComponent, canActivate:[AdminGuard]},
   {path:'browsesp/:loc',component:BrowseSpaceComponent},
   {path:'browse',component:SearchLocationComponent},
   {path:'calcloc',component:CalculateSpaceComponent},

@@ -94,15 +94,16 @@ initSignupForm(){
           // session storage is created and converted to string to differentiate between user and admin
           sessionStorage.setItem('user', JSON.stringify(logged_user));
           // sessionStorage.setItem('admin', JSON.stringify(true));
-          this.userservice.loggedin=true;
+          this.authservice.loggedin=true;
           if(logged_user['admin']){
             // if the login credentials belong to an admin then the page is routed to the admin dashboard
+            this.authservice.isadmin=true;
             this.router.navigate(['/admin-dashboard'])
             return;
           }
           else{
             // else the page is routed to the user dashboard
-             this.router.navigate(['/home'])
+             this.router.navigate(['/dashboard'])
              return;
           }
         }else{

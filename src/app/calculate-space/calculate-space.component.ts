@@ -37,6 +37,7 @@ export class CalculateSpaceComponent implements OnInit {
   }
   resetRoom(index)
   {
+    this.totalArea -=this.all_rooms[index].area; 
     this.all_rooms[index].area = 0;
     for(let thing of this.all_rooms[index].things){
       thing.count = 0;
