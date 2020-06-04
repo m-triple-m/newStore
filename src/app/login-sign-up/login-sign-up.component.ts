@@ -150,6 +150,7 @@ initSignupForm(){
           
           
           this.signup=false; 
+          this.userform.reset();
          });
 
       } else{
