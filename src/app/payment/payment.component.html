@@ -34,22 +34,27 @@
                     <mat-icon matPreffix>check_circle</mat-icon>
                 <p>No credit card required</p>
                 </div>
-                <form [formGroup]="reserveform" (submit)="reserveSubmit(reserveform.value)" *ngIf="reserveform">
+                <form [formGroup]="reserveform" (ngSubmit)="reserveSubmit(reserveform.value)" *ngIf="reserveform">
                     <mat-form-field style="width:100%;" >
                         <input matInput placeholder="First Name" formControlName="first">
+                        <mat-error>First Name Required</mat-error>
                     </mat-form-field>
                     <mat-form-field style="width:100%;" >
                         <input matInput placeholder="Last Name" formControlName="last">
+                        <mat-error></mat-error>
                     </mat-form-field>
                     <mat-form-field style="width:100%;" >
                         <input matInput placeholder="Phone no." formControlName="phone">
+                        <mat-error></mat-error>
                     </mat-form-field>
                     <mat-form-field style="width:100%;">
                         <input matInput placeholder="Email Address" formControlName="email">
+                        <mat-error></mat-error>
                     </mat-form-field>
                     <mat-form-field style="width:100%">
                         <mat-label>I need storage from </mat-label>
-                        <input matInput [matDatepicker]="picker"  formControlName="date">
+                        <input matInput [min]="lastdate" [matDatepicker]="picker"  formControlName="date">
+                        <mat-error></mat-error>
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field><br>

@@ -24,6 +24,8 @@ export class BookingComponent implements OnInit {
   selectedLocation;
   locations;
 
+  spaceOptions = [15, 25, 50, 100, 300, 500];
+
   next = faArrowRight;
   prev = faArrowLeft;
 
@@ -89,10 +91,15 @@ export class BookingComponent implements OnInit {
     // console.log('visit '+visit_inc);
 
     this.locations =  this.locations.filter((loc) => {
-      console.log(loc.area+'  '+this.space);
+      // console.log(loc.area+'  '+this.space);
       return loc.area >= this.space;
     })
-    // console.log(this.locations)
+
+    this.spaceOptions = this.spaceOptions.filter(opt => {
+      return opt > this.space;
+    })
+    console.log(this.spaceOptions)
+    console.log(this.space);
 
     this.locations = this.locations.map(loc => {
       loc.price += loc.price*business_inc/100
@@ -136,7 +143,7 @@ export class BookingComponent implements OnInit {
 
   bookLocation(location){
     sessionStorage.setItem('location', JSON.stringify(location));
-    sessionStorage.setItem('area', JSON.stringify(this.areareq));
+    sessionStorage.setItem('area', JSON.stringify(this.space));
     this.router.navigate(['/payment'])
   }
 

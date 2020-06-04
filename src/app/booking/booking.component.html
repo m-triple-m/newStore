@@ -40,7 +40,7 @@
               <ng-template matStepLabel></ng-template>
               <app-item [items] = "getStep4()" (getUsage) = "setUsage4($event)" (getSpace) = "setSpace($event)" *ngIf="usage3!=undefined"></app-item>
               <div class="row justify-content-center mt-5">
-                <button mat-fab matStepperNext class="nav-btn" [disabled]="usage4 == undefined"><fa-icon [icon]="next"></fa-icon></button>
+                <button mat-fab matStepperNext class="nav-btn" [disabled]="usage4 == undefined" (click)="filterLocationBySpaceReq()"><fa-icon [icon]="next"></fa-icon></button>
               </div>
           
             </mat-step>
@@ -54,6 +54,8 @@
                 <button mat-button matStepperNext style="background-color:rgba(96, 185, 207, 0.904)" (click)="setLocationDetails()">Next</button>
               </div>
             </mat-step> -->
+
+            <!-- Step 5 -->
             <mat-step>
               <ng-template matStepLabel>Results</ng-template>
               <!-- <div class="container">
@@ -76,30 +78,32 @@
                 </div>
               </div> -->
               <div class="container" *ngIf="locations">
-                <mat-card *ngFor="let loc of locations">
-                  <mat-card-header>
-                    <h2>{{loc.locality}}</h2>
-                  </mat-card-header>
-                  <mat-card-content>
-                    <div class="row">
-                      <div class="col-md-3">
-                        <img src="assets/10sq.PNG" alt="" style="height: 4cm;">
+                <div *ngFor="let loc of locations">
+                  <mat-card *ngFor="let opt of spaceOptions">
+                    <mat-card-header>
+                      <h2>{{loc.locality}}</h2>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <div class="row">
+                        <div class="col-md-3">
+                          <img src="assets/10sq.PNG" alt="" style="height: 4cm;">
+                        </div>
+                        <div class="col-md-2">
+                          <h5>{{opt}} sq ft</h5>
+                        </div>
+                        <div class="col-md-3">
+                          <h5>{{loc.address}}<br>{{loc.pincode}}<br>{{loc.city}},{{loc.state}}</h5>
+                        </div>
+                        <div class="col-md-3">
+                          <h5>Rs {{loc.price}} /month</h5>
+                        </div>
+                        <div class="col-md" style="text-align: end;">
+                          <button class="btn" (click)="bookLocation(loc)"><img src="assets/arrow.png" alt=""></button>
+                        </div>
                       </div>
-                      <div class="col-md-2">
-                        <h5>{{loc.area}} sq ft</h5>
-                      </div>
-                      <div class="col-md-3">
-                        <h5>{{loc.address}}<br>{{loc.pincode}}<br>{{loc.city}},{{loc.state}}</h5>
-                      </div>
-                      <div class="col-md-3">
-                        <h5>Rs {{loc.price}} /month</h5>
-                      </div>
-                      <div class="col-md" style="text-align: end;">
-                        <button class="btn" (click)="bookLocation(loc)"><img src="assets/arrow.png" alt=""></button>
-                      </div>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
               </div>
             </mat-step>
           </mat-horizontal-stepper>

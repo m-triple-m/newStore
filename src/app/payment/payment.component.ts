@@ -20,6 +20,7 @@ export class PaymentComponent implements OnInit {
   // orderno=0;
   // locality;
 
+  lastdate = new Date();
   user;
   location;
   reserveform;  
@@ -51,12 +52,18 @@ export class PaymentComponent implements OnInit {
       email:['',Validators.required],
       date:['',Validators.required],
       orderdate:new Date(),
-      reservation:this.ordernum,
+      reservation_num:this.ordernum,
     })
   }
   reserveSubmit(formdata){
+
+    if(this.reserveform.invalid){
+      return;
+    }
+
     this.orderservie.addOrder(formdata).subscribe((res)=>{
       console.log(res);
+      formdata.location = this.location;
       sessionStorage.setItem('reserveorder',JSON.stringify(formdata))
       this.router.navigate(['/results']);
     })
