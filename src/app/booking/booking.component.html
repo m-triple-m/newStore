@@ -58,30 +58,33 @@
             <!-- Step 5 -->
             <mat-step>
               <ng-template matStepLabel>Results</ng-template>
-              <!-- <div class="container">
-                <div class="container" *ngFor="let loc of locations" >
-                  <div class="card">
-                    <div class="card-header">
-                      <h4>{{loc.locality}}</h4>
+              <div class="container ">
+              <mat-card class="bad">
+                
+                  <div class="row bad">
+                    <div class="col-md-3">
+                      <h2>Loacality</h2>
                     </div>
-                    <div class="card-body">
-                      <div class="row">
-                        <img class="col-md" src="assets/10sq.PNG" style="height: fit-content;width: fit-content;">
-                        <label for="">10 sq ft</label>
-                        <div class="col-md-1"></div>
-                        <label for="">{{loc.address}}</label>
-                        <label for="">Rs {{loc.price}} / month</label>
-                        <button (click)="setDetails(loc)">-></button>
-                      </div>
+                    <div class="col-md-2">
+                      <h2>Space Required</h2>
+                    </div>
+                    <div class="col-md-3">
+                      <h2>Address</h2>
+                    </div>
+                    <div class="col-md-3">
+                      <h2>Rate</h2>
                     </div>
                   </div>
-                </div>
-              </div> -->
+                  
+
+                
+              </mat-card>
+            </div>
               <div class="container" *ngIf="locations">
                 <div *ngFor="let loc of locations">
                   <mat-card *ngFor="let opt of spaceOptions">
                     <mat-card-header>
-                      <h2>{{loc.locality}}</h2>
+                      <h4>{{loc.locality}}</h4>
                     </mat-card-header>
                     <mat-card-content>
                       <div class="row">

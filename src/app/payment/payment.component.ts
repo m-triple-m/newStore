@@ -42,6 +42,7 @@ export class PaymentComponent implements OnInit {
     
   }
   
+  
   initform(user, location){
     this.reserveform=this.formbuilder.group({
       user : user._id,
@@ -55,6 +56,10 @@ export class PaymentComponent implements OnInit {
       reservation_num:this.ordernum,
     })
   }
+  returnControls1(name){
+    // to show error messages if any detail is left blank
+  return this.reserveform.controls[name];
+}
   reserveSubmit(formdata){
 
     if(this.reserveform.invalid){

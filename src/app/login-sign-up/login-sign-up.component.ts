@@ -98,7 +98,7 @@ initSignupForm(){
           if(logged_user['admin']){
             // if the login credentials belong to an admin then the page is routed to the admin dashboard
             this.authservice.isadmin=true;
-            this.router.navigate(['/admin-dashboard'])
+            this.router.navigate(['/admin'])
             return;
           }
           else{
