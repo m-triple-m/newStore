@@ -1,0 +1,9 @@
+.sidebar{
+    background-image: linear-gradient(to bottom, #a467f5, rgb(255, 161, 211));
+    height: 100vh;
+    padding: 2rem;
+}
+
+.panel{
+    background-color: rgb(245, 245, 245);
+}

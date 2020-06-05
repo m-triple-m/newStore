@@ -7,17 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDashboardComponent implements OnInit {
 
+  showOrders = true;
+  showEditform = false;
+  
   user;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
-    document.body.classList.add('user-dash');
     this.user = JSON.parse(sessionStorage.getItem('user'));
   }
 
-  ngOnDestroy(){
-    document.body.classList.remove('user-dash');
+  toggleShowOrders(){
+    this.hideall();
+    this.showOrders = true;
+  }
+
+  toggleEditform(){
+    this.hideall();
+    this.showEditform = true;
+  }
+  
+
+  hideall(){
+    this.showOrders = false;
+    this.showEditform = false;
   }
 
 }

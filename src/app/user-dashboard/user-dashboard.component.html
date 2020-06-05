@@ -1,25 +1,29 @@
 <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
+    <div class="row">
+        <div class="col-2 sidebar text-center">
+            <!-- <img [src]="'assets/img/testimonials-1.jpg'" class="rounded-circle img-fluid" style="height: 10rem;"> -->
+            <h4>Hello, {{user.name}}</h4>
+            <h4>{{user.email}}</h4>
+            <hr>
+
+            <!-- <button mat-button class="btn-block mt-3" [routerLink]="['/browsedesign']" routerLinkActive="router-link-active"  style="background-color: rgba(240, 248, 255, 0.1);">
+                New Order
+            </button> -->
+            <button mat-button class="btn-block mt-3" (click)="toggleEditform()" style="background-color: rgba(240, 248, 255, 0.1);">
+                Update Profile
+            </button>
+            <button mat-button class="btn-block mt-3" (click)="toggleShowOrders()" style="background-color: rgba(240, 248, 255, 0.1);">
+                Manage Orders
+            </button>
+
+        </div>
+        <div class="col-10 panel">
             <div class="row justify-content-center">
-                <div class="col-md-4" style="border-right: 1px solid rgb(194, 194, 194);height: 300px">
-
-                    <mat-card class="col-md-11">
-                        <mat-card-content class="card-body">
-                            <img [src]="user.avatar" class="rounded-circle" height="100px">
-                            <p class="h3">{{user.name}}</p>
-                            <p class="h4">{{user.email}}</p>
-                        </mat-card-content>
-                    </mat-card>
-
-                </div>
-
-                <div class="col-md-8">
-                    <mat-card class="col-md-11">
-                        <mat-card-content class="card-body">
-                            
-                        </mat-card-content>
-                    </mat-card>
+                <div class="col-11">
+                    <p class="display-4 mt-3">User Dashboard</p>
+                    <hr>
+                    <app-orders-placed *ngIf="showOrders"></app-orders-placed>
+                    <app-update-profile *ngIf="showEditform"></app-update-profile>
                 </div>
             </div>
         </div>

@@ -3,8 +3,8 @@ const schema=mongoose.Schema;
 // const autoincrement=require('mongoose-auto-increment')
 // autoincrement.initialize(mongoose);
 const OrderSchema=new schema ({
-    user : String,
-    location : String,
+    user : {type : mongoose.Types.ObjectId, ref : 'users'},
+    location : {type : mongoose.Types.ObjectId, ref : 'location'},
     name : String,
     first : String,
     last : String,
@@ -12,7 +12,9 @@ const OrderSchema=new schema ({
     email : String,
     date : Date,
     orderdate : Date,
-    reservation: Number,
+    reservation_num: Number,
+    area : Number,
+    price : Number
 
 })
 // OrderSchema.plugin(autoincrement.plugin, { model: 'Orders', field: 'Reservation' });
