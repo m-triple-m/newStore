@@ -93,7 +93,7 @@ export class ForgotpassComponent implements OnInit {
       if(this.otp == formdata.otp)
       { 
         console.log("Correct OTP");
-        this.userservice.updateUser(this.forgetuser._id, {password : formdata.password}
+        this.userservice.updateUser(this.forgetuser._id, {password : formdata.password} 
           ).subscribe(data => {
         console.log(data);
         this.sendMail({from: 'divyagulwti@gmail.com',
