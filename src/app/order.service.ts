@@ -20,4 +20,8 @@ export class OrderService {
   getOrderNumber(){
     return this.http.get(this.url+'/getnum');
   }
+
+  getOrderByUser(id){
+    return this.http.get(this.url+'/getbyuser/'+id);
+  }
 }

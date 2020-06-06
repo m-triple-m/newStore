@@ -39,6 +39,7 @@ import { BrowseOrdersComponent } from './browse-orders/browse-orders.component';
 import { BrowseUsersComponent } from './browse-users/browse-users.component';
 import { BrowseLocationsComponent } from './browse-locations/browse-locations.component';
 import { BrowseSpaceComponent } from './browse-space/browse-space.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { BrowseSpaceComponent } from './browse-space/browse-space.component';
     BrowseUsersComponent,
     BrowseLocationsComponent,
     BrowseSpaceComponent,
+    UpdateProfileComponent,
     
   ],
   imports: [

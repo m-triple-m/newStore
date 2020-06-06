@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-orders-placed',
@@ -9,11 +10,19 @@ import { UserService } from '../user.service';
 export class OrdersPlacedComponent implements OnInit {
 
   orders;
-  constructor(private userservice:UserService) { }
+  user;
 
-  ngOnInit() {
-    this.userservice.getorder().subscribe(data=>{
-      this.orders=data;
+  constructor(private orderservice: OrderService) { }
+
+  ngOnInit(): void {
+    this.user = JSON.parse(sessionStorage.getItem('user'));
+    this.getUserOrders();
+  }
+
+  getUserOrders(){
+    this.orderservice.getOrderByUser(this.user._id).subscribe(data => {
+      console.log(data);
+      this.orders = data;
     })
   }
 

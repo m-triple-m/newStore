@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <p class="h2 text-center mt-5">Update User Details</p>
+    <hr>
+    <mat-card>
+      <mat-card-content class="card-body">
+  
+        <form [formGroup]="editform" (submit)="updateUser(editform.value)">
+          <div class="row mt-4">
+            <div class="col-md">
+              <div class="row mt-4">
+                <label class="col-form-label lab col-md-2">Name: </label>
+                <input class="form-control col-md-8" formControlName="name">
+              </div>
+    
+              <div class="row mt-4">
+                <label class="col-form-label lab col-md-2">Password: </label>
+                <input class="form-control col-md-8" type="password" formControlName="password">
+              </div>
+
+              <div class="row mt-4">
+                <label class="col-form-label lab col-md-2">PinCode: </label>
+                <input class="form-control col-md-8" formControlName="pincode">
+              </div>
+
+              <div class="row mt-4">
+                <label class="col-form-label lab col-md-2">State: </label>
+                <input class="form-control col-md-8" formControlName="state">
+              </div>
+  
+            </div>
+            <div class="col-md">
+              <div class="row mt-4">
+                <label class="col-form-label lab col-md-2">Username: </label>
+                <input class="form-control col-md-8" formControlName="username">
+              </div>
+    
+              <div class="row mt-4">
+                <label class="col-form-label lab col-md-2">Email: </label>
+                <input class="form-control col-md-8" type="email" formControlName="email">
+              </div>
+
+              <div class="row mt-4">
+                <label class="col-form-label lab col-md-2">Mobile: </label>
+                <input class="form-control col-md-8" formControlName="mobile">
+              </div>
+
+              <div class="row mt-4">
+                <label class="col-form-label lab col-md-2">Address: </label>
+                <textarea class="form-control col-md-8" formControlName="address"></textarea>
+              </div>
+              
+              <div class="row mt-5">
+                <div class="col-md-4">
+                  <button mat-raised-button>Update details</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </form>
+        
+      </mat-card-content>
+    </mat-card>
+  </div>

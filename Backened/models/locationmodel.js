@@ -7,7 +7,7 @@ const UserSchema=new schema ({
     pincode:Number,
     area:Number,
     price:Number,
-    locality:String
+    locality:String,
 
 })
 const location_model = mongoose.model('location',UserSchema);

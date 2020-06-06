@@ -54,6 +54,8 @@ export class PaymentComponent implements OnInit {
       date:['',Validators.required],
       orderdate:new Date(),
       reservation_num:this.ordernum,
+      area: JSON.parse(sessionStorage.getItem('area')),
+      price: JSON.parse(sessionStorage.getItem('price'))
     })
   }
   returnControls1(name){

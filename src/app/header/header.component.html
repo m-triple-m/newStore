@@ -30,7 +30,7 @@
             <label for=""></label>
             <button [routerLink]="['/signup']" routerLinkActive="router-link-active" class="btn btn-warning "
                 *ngIf="!authservice.loggedin">Login</button>
-            <button class="btn btn-warning " *ngIf="authservice.loggedin">{{logged_user.username}}</button>
+            <button class="btn btn-warning " *ngIf="authservice.loggedin" [routerLink]="['/userdash']" routerLinkActive="router-link-active" >{{logged_user.username}}</button>
             <button *ngIf="authservice.loggedin" (click)="logout()" class="btn btn-primary">Logout</button>
             
         </form>
