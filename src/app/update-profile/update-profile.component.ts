@@ -27,6 +27,7 @@ export class UpdateProfileComponent implements OnInit {
       console.log(data);
       this.currentUser = data;
       sessionStorage.setItem('user', JSON.stringify(this.currentUser));
+      this.editform.reset();
     })
   }
 

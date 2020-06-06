@@ -21,6 +21,7 @@ import { ResultsComponent } from './results/results.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowseSpaceComponent } from './browse-space/browse-space.component';
 import { AdminGuard } from './guards/admin.guard';
+import { PackingMaterialsComponent } from './packing-materials/packing-materials.component';
 
 
 const routes: Routes = [
@@ -43,7 +44,8 @@ const routes: Routes = [
   {path:'orders',component:OrdersPlacedComponent},
   { path : 'signup',component:LoginSignUpComponent},
   {path : 'results',component:ResultsComponent},
-  {path : '**',component:NotFoundComponent}
+  {path : '**',component:NotFoundComponent},
+  {path : 'packing',component:PackingMaterialsComponent},
 ];
 
 @NgModule({
