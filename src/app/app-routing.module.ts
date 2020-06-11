@@ -22,12 +22,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowseSpaceComponent } from './browse-space/browse-space.component';
 import { AdminGuard } from './guards/admin.guard';
 import { PackingMaterialsComponent } from './packing-materials/packing-materials.component';
+import { BoxesComponent } from './boxes/boxes.component';
+import { SuppliesComponent } from './supplies/supplies.component';
 
 
 const routes: Routes = [
   {path : '',redirectTo:'/dashboard',pathMatch:'full'},
   {path: 'register',component: RegisterComponent},
-  {path: 'login',component:LoginComponent,canActivate:[CheckloginGuard]},
+  {path: 'login',component:LoginComponent},
   {path: 'dashboard',component: DashboardComponent} ,  //redesign
   {path: 'forgot',component: ForgotpassComponent},
   {path:'userdash' , component:UserDashboardComponent}, //pending
@@ -44,8 +46,11 @@ const routes: Routes = [
   {path:'orders',component:OrdersPlacedComponent},
   { path : 'signup',component:LoginSignUpComponent},
   {path : 'results',component:ResultsComponent},
-  {path : '**',component:NotFoundComponent},
   {path : 'packing',component:PackingMaterialsComponent},
+  {path : 'boxes',component:BoxesComponent},
+  {path : 'supplies',component:SuppliesComponent},
+  {path : '**',component:NotFoundComponent},
+  
 ];
 
 @NgModule({

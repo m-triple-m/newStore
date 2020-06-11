@@ -31,30 +31,35 @@
         <div class="card-header">
             <p>Your Reservation Number is {{reserveorder.Reservation}} </p>
         </div>
-        <div class="card-body">
-            <div class="card col-md-6 ">
-                <div class="mt-5">
-                    <div class="row">
-                        <label class="col-md">Your Details :</label>
-                        <div class="col-md-2"></div>
-                       <div class="col-md">
-                        <h5>{{reserveorder.first}}{{reserveorder.last}}</h5>
-                        <p>{{reserveorder.email}}<br> {{reserveorder.phone}} </p>
-                       </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-md">Location : </label>
-                        <div class="col-md-2"></div>
-                        <div class="col-md">
-                            <h5> {{reserveorder.location.locality}} </h5>
-                        <p>{{reserveorder.location.address}},{{reserveorder.location.city}}
-                            <br>{{reserveorder.location.state}}-{{reserveorder.location.pin}}
-                        </p>
+        <div class="card-body ">
+            <div class="row">
+                <div class="card col-md-8">
+                    <div class="mt-5">
+                        <div class="row">
+                            <label class="col-md">Your Details :</label>
+                            <div class="col-md-2"></div>
+                           <div class="col-md">
+                            <h5>{{reserveorder.first}}{{reserveorder.last}}</h5>
+                            <p>{{reserveorder.email}}<br> {{reserveorder.phone}} </p>
+                           </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-md">Location : </label>
+                            <div class="col-md-2"></div>
+                            <div class="col-md">
+                                <h5> {{reserveorder.location.locality}} </h5>
+                            <p>{{reserveorder.location.address}},{{reserveorder.location.city}}
+                                <br>{{reserveorder.location.state}}-{{reserveorder.location.pin}}
+                            </p>
+                            
+                            </div>
+                            
                         </div>
                     </div>
-                </div>
+                    
             </div>
-            <div class="col-md-6"></div>
+            </div>
+            
         </div>
     </div>
 </div>

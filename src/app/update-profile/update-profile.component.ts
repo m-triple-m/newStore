@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { UserService } from '../user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-profile',
@@ -27,6 +28,11 @@ export class UpdateProfileComponent implements OnInit {
       console.log(data);
       this.currentUser = data;
       sessionStorage.setItem('user', JSON.stringify(this.currentUser));
+      Swal.fire({
+        icon : 'error' ,
+        title: 'Oops!',
+        text: 'Your profile is updated' ,
+      })
       this.editform.reset();
     })
   }

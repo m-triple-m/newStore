@@ -1,0 +1,100 @@
+<div class="container mt-5">
+    <form action="">
+        <h2 style="color: red;">Moving Boxes</h2>
+    <p>Protect your fragile and most precious belongings in the best possible way.</p>
+    <h5>Small Boxes</h5>
+    <p>Rs 15</p>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="assets/small.jpg" [routerLink]="['/boxes']" routerLinkActive="router-link-active"  alt="" style="outline-style: double;height: 5cm;width: 8cm;">
+        </div>
+        <div class="col-md">
+            <p>Suitable for videos/DVDs/CDs, household items, books, tools and other smaller heavy items
+                <br>
+                Individual fragile items when used with bubblewrap/wrapping paper
+                <br>
+                Tape required to secure box
+                <br>
+                35 x 27 x 33 cm
+                <br>
+                Made from responsible sources
+                <br>
+                Reusable
+            </p>
+            <div class="row"><button class=" btn btn-danger" (click)="smallboxneg()">-</button><h2> {{smallboxcount}} </h2><button class="btn btn-primary" (click)="smallboxpos()">+</button></div>
+        </div>
+    </div>
+    <h5 class="mt-5">Medium Boxes</h5>
+    <p>Rs 50</p>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="assets/medium.jpg" [routerLink]="['/boxes']" routerLinkActive="router-link-active"  alt="" style="outline-style: double;height: 5cm;width: 8cm;">
+        </div>
+        <div class="col-md">
+            <p>Suitable for medium-weight items such as kitchen utensils, clothing, toys etc.
+                <br>
+                Glass dividers can be used with this box
+                <br>
+                Tape required to secure box
+                <br>
+                55 x 35 x 33 cm
+                <br>
+                Made from responsible sources
+                <br>
+                Reusable
+            </p>
+            <div class="row"><button class=" btn btn-danger" (click)="mediumboxneg()">-</button><h2> {{mediumboxcount}} </h2><button class="btn btn-primary" (click)="mediumboxpos()">+</button></div>
+        </div>
+    </div>
+    <h5 class="mt-5">Medium Boxes (Extra strong)</h5>
+    <p>Rs 75</p>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="assets/mediumx.jpg" [routerLink]="['/boxes']" routerLinkActive="router-link-active"  alt="" style="outline-style: double;height: 5cm;width: 8cm;">
+        </div>
+        <div class="col-md">
+            <p>Suitable for heavier items
+                <br>
+                Highest quality moving and storage box (tough & durable), reinforced cardboard
+                <br>
+                No tape required so convenient to open and close
+                <br>
+                55 x 35 x 33 cm
+                <br>
+                Made from responsible sources
+                <br>
+                Reusable
+            </p>
+            <div class="row"><button class=" btn btn-danger" (click)="mediumboxxneg()">-</button><h2> {{mediumboxxcount}} </h2><button class="btn btn-primary" (click)="mediumboxxpos()">+</button></div>
+        </div>
+    </div>
+    <h5 class="mt-5">Large Box</h5>
+    <p>Rs 100</p>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="assets/large.jpg" [routerLink]="['/boxes']" routerLinkActive="router-link-active"  alt="" style="outline-style: double;height: 5cm;width: 8cm;">
+        </div>
+        <div class="col-md">
+            <p>Perfect box for linen, sheets, towels and clothing – multi purpose
+                <br>
+                Ideal for other larger items
+                <br>
+                Tape required to secure box
+                <br>
+                46 x 46 x 45 cm
+                <br>
+                Made from responsible sources
+                <br>
+                Reusable
+            </p>
+            <div class="row"><button class=" btn btn-danger" (click)="largeboxneg()">-</button><h2> {{largeboxcount}} </h2><button class="btn btn-primary" (click)="largeboxpos()">+</button></div>
+        </div>
+    </div>
+    <button class="btn btn-primary btn-block mt-5">Submit</button>
+    </form>
+    
+    
+
+
+</div>
+

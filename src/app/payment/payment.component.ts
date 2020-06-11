@@ -26,13 +26,16 @@ export class PaymentComponent implements OnInit {
   reserveform;  
   ordernum;
   areareq;
+  price;
 
   constructor(private formbuilder:FormBuilder,private router:Router, private orderservie: OrderService) { }
 
   ngOnInit() {
+
     
     this.user=JSON.parse(sessionStorage.getItem('user'));
     this.location=JSON.parse(sessionStorage.getItem('location'))
+    this.price=this.location.price;
     this.areareq=JSON.parse(sessionStorage.getItem('area'))
     this.orderservie.getOrderNumber().subscribe((num: number) => {
       console.log('Order Number : '+num+1);
@@ -54,6 +57,8 @@ export class PaymentComponent implements OnInit {
       date:['',Validators.required],
       orderdate:new Date(),
       reservation_num:this.ordernum,
+      areareq:this.areareq,
+      pricel:this.price,
       area: JSON.parse(sessionStorage.getItem('area')),
       price: JSON.parse(sessionStorage.getItem('price'))
     })
