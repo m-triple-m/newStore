@@ -44,7 +44,7 @@ const routes: Routes = [
   {path:'regloc',component:RegisteredLocationsComponent},
   {path:'payment',component:PaymentComponent},
   {path:'orders',component:OrdersPlacedComponent},
-  { path : 'signup',component:LoginSignUpComponent},
+  {path : 'signup',component:LoginSignUpComponent},
   {path : 'results',component:ResultsComponent},
   {path : 'packing',component:PackingMaterialsComponent},
   {path : 'boxes',component:BoxesComponent},
