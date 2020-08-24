@@ -18,6 +18,7 @@ largeboxcount=0;
     if(this.smallboxcount>0){
       this.smallboxcount--;
     }
+    
   }
   smallboxpos(){
     this.smallboxcount++;
@@ -46,6 +47,8 @@ largeboxcount=0;
   largeboxpos(){
     this.largeboxcount++;
   }
-  
+  orderbox(){
+    
+  }
 
 }
