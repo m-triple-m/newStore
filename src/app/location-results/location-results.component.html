@@ -1,0 +1,50 @@
+    <div class="container mt-5">
+    <mat-card>
+      
+        <div class="row bad" >
+          <div class="col-md-3">
+            <h5>Locality</h5>
+          </div>
+          <div class="col-md-2">
+            <h5>Space Required</h5>
+          </div>
+          <div class="col-md-3">
+            <h5>Address</h5>
+          </div>
+          <div class="col-md-3">
+            <h5>Rate</h5>
+          </div>
+        </div>
+        
+
+      
+    </mat-card>
+  </div>
+    <div class="container" *ngIf="locations">
+      
+        <mat-card *ngFor="let loc of locations">
+          <mat-card-header>
+            <h4>{{loc.locality}}</h4>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-md-3">
+                <img src="assets/10sq.PNG" alt="" style="height: 4cm;">
+              </div>
+              <div class="col-md-2">
+                <h5> {{areaReq}} sq ft</h5>
+              </div>
+              <div class="col-md-3">
+                <h5>{{loc.address}}<br>{{loc.pincode}}<br>{{loc.city}},{{loc.state}}</h5>
+              </div>
+              <div class="col-md-3">
+                <h5>Rs {{loc.price}} /month</h5>
+              </div>
+              <div class="col-md" style="text-align: end;">
+                <button class="btn" (click)="bookLocation(loc)"><img src="assets/arrow.png" alt=""></button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      
+    </div>

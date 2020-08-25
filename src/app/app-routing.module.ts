@@ -24,12 +24,12 @@ import { AdminGuard } from './guards/admin.guard';
 import { PackingMaterialsComponent } from './packing-materials/packing-materials.component';
 import { BoxesComponent } from './boxes/boxes.component';
 import { SuppliesComponent } from './supplies/supplies.component';
+import { LocationResultsComponent } from './location-results/location-results.component';
 
 
 const routes: Routes = [
   {path : '',redirectTo:'/dashboard',pathMatch:'full'},
   {path: 'register',component: RegisterComponent},
-  {path: 'login',component:LoginComponent},
   {path: 'dashboard',component: DashboardComponent} ,  //redesign
   {path: 'forgot',component: ForgotpassComponent},
   {path:'userdash' , component:UserDashboardComponent}, //pending
@@ -49,6 +49,7 @@ const routes: Routes = [
   {path : 'packing',component:PackingMaterialsComponent},
   {path : 'boxes',component:BoxesComponent},
   {path : 'supplies',component:SuppliesComponent},
+  {path : 'locations',component:LocationResultsComponent},
   {path : '**',component:NotFoundComponent},
   
 ];

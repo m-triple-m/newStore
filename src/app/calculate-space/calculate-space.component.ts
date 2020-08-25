@@ -15,6 +15,7 @@ export class CalculateSpaceComponent implements OnInit {
   RoomArea1=0;
   all_rooms;
   room_spaces=[];
+  ta;
   constructor(private router:Router) { }
 
   ngOnInit() {
@@ -31,9 +32,10 @@ export class CalculateSpaceComponent implements OnInit {
       this.all_rooms[i].area=abc;
       this.totalArea+=this.all_rooms[i].area;  
     }
-
-    sessionStorage.setItem('areareq',"this.totalArea");
+    
+    sessionStorage.setItem('areareq',JSON.stringify(this.totalArea));
     return this.totalArea;
+
   }
   resetRoom(index)
   {

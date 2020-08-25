@@ -109,7 +109,7 @@ export class ForgotpassComponent implements OnInit {
             title : 'Success',
             text : 'Your have successfully reset your password!!'
           }).then(() => {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/signup']);
           })
       })
         return;

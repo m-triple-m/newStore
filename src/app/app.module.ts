@@ -42,6 +42,7 @@ import { BrowseSpaceComponent } from './browse-space/browse-space.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { BoxesComponent } from './boxes/boxes.component';
 import { SuppliesComponent } from './supplies/supplies.component';
+import { LocationResultsComponent } from './location-results/location-results.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { SuppliesComponent } from './supplies/supplies.component';
     UpdateProfileComponent,
     BoxesComponent,
     SuppliesComponent,
+    LocationResultsComponent,
     
   ],
   imports: [
