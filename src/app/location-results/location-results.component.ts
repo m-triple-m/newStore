@@ -29,7 +29,7 @@ export class LocationResultsComponent implements OnInit {
   }
   bookLocation(location){
     sessionStorage.setItem('location', JSON.stringify(location));
-    sessionStorage.setItem('area', JSON.stringify(this.space));
+    sessionStorage.setItem('area', JSON.stringify(this.areaReq));
     this.router.navigate(['/payment'])
   }
   filterLocationBySpaceReq(){

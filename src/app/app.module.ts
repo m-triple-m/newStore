@@ -43,6 +43,8 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { BoxesComponent } from './boxes/boxes.component';
 import { SuppliesComponent } from './supplies/supplies.component';
 import { LocationResultsComponent } from './location-results/location-results.component';
+import { PackingTipsComponent } from './packing-tips/packing-tips.component';
+import { StorageTipsComponent } from './storage-tips/storage-tips.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { LocationResultsComponent } from './location-results/location-results.co
     BoxesComponent,
     SuppliesComponent,
     LocationResultsComponent,
+    PackingTipsComponent,
+    StorageTipsComponent,
     
   ],
   imports: [
