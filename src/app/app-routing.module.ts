@@ -26,6 +26,7 @@ import { BoxesComponent } from './boxes/boxes.component';
 import { SuppliesComponent } from './supplies/supplies.component';
 import { LocationResultsComponent } from './location-results/location-results.component';
 import { PackingTipsComponent } from './packing-tips/packing-tips.component';
+import { StorageTipsComponent } from './storage-tips/storage-tips.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,7 @@ const routes: Routes = [
   {path : 'supplies',component:SuppliesComponent},
   {path : 'locations',component:LocationResultsComponent},
   {path : 'tips',component:PackingTipsComponent},
+  {path : 'stips',component:StorageTipsComponent},
   {path : '**',component:NotFoundComponent},
   
 ];

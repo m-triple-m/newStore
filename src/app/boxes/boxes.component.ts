@@ -10,6 +10,7 @@ smallboxcount=0;
 mediumboxcount=0;
 mediumboxxcount=0;
 largeboxcount=0;
+wardboxcount=0;
   constructor() { }
 
   ngOnInit(): void {
@@ -46,6 +47,14 @@ largeboxcount=0;
   }
   largeboxpos(){
     this.largeboxcount++;
+  }
+  wardboxneg(){
+    if(this.wardboxcount>0){
+      this.wardboxcount--;
+    }
+  }
+  wardboxpos(){
+    this.wardboxcount++;
   }
   orderbox(){
     
