@@ -24,15 +24,21 @@
                 <a class="nav-link" [routerLink]="['/packing']" routerLinkActive="router-link-active">Packing Materials & Supplies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/tips']" routerLinkActive="router-link-active">Packing Tips</a>
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;">
+                      Tools and tips
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" [routerLink]="['/book']" routerLinkActive="router-link-active" >Storage Locator</a>
+                        <a class="dropdown-item" [routerLink]="['/calcloc']" routerLinkActive="router-link-active" >Storage Size Calculator</a>
+                        <a class="dropdown-item" [routerLink]="['/tips']" routerLinkActive="router-link-active" ></a>
+                        <a class="dropdown-item" [routerLink]="['/stips']" routerLinkActive="router-link-active" >Storage Locator</a>
+                    </div>
+                  </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/stips']" routerLinkActive="router-link-active">Storage Tips</a>
-            </li>
-        </ul>
+         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+           
             <div class="col-md"></div>
             <label for=""></label>
             <button [routerLink]="['/signup']" routerLinkActive="router-link-active" class="btn btn-warning "
