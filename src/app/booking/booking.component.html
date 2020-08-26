@@ -59,14 +59,20 @@
             <mat-step>
               <ng-template matStepLabel>Results</ng-template>
               <div class="container ">
+
+                <mat-card class="mb-4 mt-4">
+                  <mat-card-content class="card-body">
+                    <h2>Space Required : {{space}}</h2>
+                  </mat-card-content>
+                </mat-card>
               <mat-card>
                 
                   <div class="row bad" >
                     <div class="col-md-3">
-                      <h5>Loacality</h5>
+                      <h5>Locality</h5>
                     </div>
                     <div class="col-md-2">
-                      <h5>Space Required</h5>
+                      <h5>Space Avaliable</h5>
                     </div>
                     <div class="col-md-3">
                       <h5>Address</h5>
@@ -101,7 +107,7 @@
                           <h5>Rs {{loc.price}} /month</h5>
                         </div>
                         <div class="col-md" style="text-align: end;">
-                          <button class="btn" (click)="bookLocation(loc)"><img src="assets/arrow.png" alt=""></button>
+                          <button class="btn" (click)="bookLocation(loc, opt)"><img src="assets/arrow.png" alt=""></button>
                         </div>
                       </div>
                     </mat-card-content>

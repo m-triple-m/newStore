@@ -10,15 +10,7 @@ import { OrderService } from '../order.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  
-  // reserveorder;
-  // price;
-  // address;
-  // city;
-  // state;
-  // pin;
-  // orderno=0;
-  // locality;
+
 
   lastdate = new Date();
   user;

@@ -1,8 +1,54 @@
-<div class="container mt-4">
-    <h2>Thank You for your Reservation</h2>
-    <br>
-    <p>You will recieve an email shortly with your reservation details.</p>
+<div class="container mt-5">
+    <mat-card>
+        <mat-card-content class="card-body">
+            
+            <div class="alert alert-success">
+                <h5 class="alert-text">Your Reservation Number is <strong>{{reserveorder.reservation_num}}</strong> </h5>
+            </div>
+
+            <h3>Order Details</h3>
+            <hr>
+
+            
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <img src="assets/10sq.PNG" alt="" style="width: 100%;">
+                </div>
+                <div class="col-md mt-5">
+                    <h6>Size :</h6>
+                    <h5>{{reserveorder.areareq}} sq ft </h5><br>
+                    <h6>Height :</h6>
+                    <h5>approx 10 feet</h5><br>
+                    <h6>Price :</h6>
+                    <h5>Rs {{reserveorder.location.price}} / month </h5><br>
+                    <h6>Location Address :</h6>
+                    <h5> {{reserveorder.location.locality}}<br>
+                        {{reserveorder.location.address}},
+                        {{reserveorder.location.city}}<br>
+                        {{reserveorder.location.state}}-
+                    {{reserveorder.location.pincode}}</h5><br>
+                    </div>
+
+                </div>
+
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQf2j71u2ipMbi4uUIcRaomOvJOSPkvvUPWFA&usqp=CAU" style="width: 100%;">
+                </div>
+                <div class="col-md mt-5">
+                    <h6>Name :</h6>
+                    <h5>{{reserveorder.first}}{{reserveorder.last}}</h5><br>
+                    <h6>Email :</h6>
+                    <h5>{{reserveorder.email}}</h5><br>
+                    <h6>Mobile :</h6>
+                    <h5>{{reserveorder.phone}}</h5><br>
+                    </div>
+
+                </div>
+        </mat-card-content>
+    </mat-card>
 </div>
+
 <div class="container">
     <h3>What's Next ?</h3>
     <br>
@@ -25,41 +71,4 @@
 <div class="container">
     <h4>Pack like a pro with our moving boxes and packing materials</h4>
     <a [routerLink]="['/#']" routerLinkActive="router-link-active" >See our full range of products.</a>
-</div>
-<div class="container mt-5">
-    <div class="card">
-        <div class="card-header">
-            <p>Your Reservation Number is {{reserveorder.Reservation}} </p>
-        </div>
-        <div class="card-body ">
-            <div class="row">
-                <div class="card col-md-8">
-                    <div class="mt-5">
-                        <div class="row">
-                            <label class="col-md">Your Details :</label>
-                            <div class="col-md-2"></div>
-                           <div class="col-md">
-                            <h5>{{reserveorder.first}}{{reserveorder.last}}</h5>
-                            <p>{{reserveorder.email}}<br> {{reserveorder.phone}} </p>
-                           </div>
-                        </div>
-                        <div class="row">
-                            <label class="col-md">Location : </label>
-                            <div class="col-md-2"></div>
-                            <div class="col-md">
-                                <h5> {{reserveorder.location.locality}} </h5>
-                            <p>{{reserveorder.location.address}},{{reserveorder.location.city}}
-                                <br>{{reserveorder.location.state}}-{{reserveorder.location.pin}}
-                            </p>
-                            
-                            </div>
-                            
-                        </div>
-                    </div>
-                    
-            </div>
-            </div>
-            
-        </div>
-    </div>
 </div>

@@ -96,7 +96,7 @@ export class BookingComponent implements OnInit {
     })
 
     this.spaceOptions = this.spaceOptions.filter(opt => {
-      return opt > this.space;
+      return opt > this.space && opt < this.space+100;
     })
     console.log(this.spaceOptions)
     console.log(this.space);
@@ -141,9 +141,9 @@ export class BookingComponent implements OnInit {
     this.router.navigate(['/payment'])
   }
 
-  bookLocation(location){
+  bookLocation(location, selected_space){
     sessionStorage.setItem('location', JSON.stringify(location));
-    sessionStorage.setItem('area', JSON.stringify(this.space));
+    sessionStorage.setItem('area', JSON.stringify(selected_space));
     this.router.navigate(['/payment'])
   }
 
