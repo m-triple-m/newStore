@@ -24,6 +24,11 @@ export class UserService {
   addLocation(formdata){
     return this.httpClient.post(this.url+'/location/add',formdata);
   }
+
+  updateLocation(id, formdata){
+    return this.httpClient.put(this.url+'/location/update/'+id, formdata);
+  }
+
   getallLocation(){
     return this.httpClient.get(this.url+'/location/all');
   }

@@ -23,11 +23,9 @@
                 <div class="col-11">
                     <p class="display-4 mt-3">User Dashboard</p>
                     <hr>
-                    <div class="container">
-                        
-                        <app-orders-placed *ngIf="showOrders"></app-orders-placed>
-                        <app-update-profile *ngIf="showEditform"></app-update-profile>
-                    </div>
+                    <app-orders-placed *ngIf="showOrders"></app-orders-placed>
+                    <app-update-profile *ngIf="showEditform"></app-update-profile>
+                    <app-package-manager *ngIf="showPackages"></app-package-manager>
                 </div>
             </div>
         </div>

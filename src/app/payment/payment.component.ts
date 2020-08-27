@@ -20,7 +20,7 @@ export class PaymentComponent implements OnInit {
   areareq;
   price;
 
-  constructor(private formbuilder:FormBuilder,private router:Router, private orderservie: OrderService) { }
+  constructor(private formbuilder:FormBuilder,private router:Router, private orderservie: OrderService, private userservice: UserService) { }
 
   ngOnInit() {
 
@@ -68,7 +68,10 @@ export class PaymentComponent implements OnInit {
     this.orderservie.addOrder(formdata).subscribe((res)=>{
       console.log(res);
       formdata.location = this.location;
-      sessionStorage.setItem('reserveorder',JSON.stringify(formdata))
+      sessionStorage.setItem('reserveorder',JSON.stringify(formdata));
+      this.userservice.updateLocation(this.location._id, {area : this.location.area - this.areareq}).subscribe(data => {
+        console.log(data);
+      });
       this.router.navigate(['/results']);
     })
   }

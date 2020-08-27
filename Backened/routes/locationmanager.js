@@ -21,6 +21,19 @@ router.post('/add',(req,res)=>{
     })
 })
 
+router.put('/update/:id',(req,res)=>{
+    console.log(req.body);
+    data = req.body;
+    models.findByIdAndUpdate(req.params.id, data)
+    .then((data)=>{
+        console.log(data)
+        res.status(200).json({message:"Success"})
+    }) 
+    .catch((err)=>{
+        res.status(500).json(err)
+    })
+})
+
 router.get('/all',(req,res)=>{
     models.find({})
     .then((data)=>{

@@ -29,7 +29,7 @@ export class CheckoutComponent implements OnInit {
   
  
   constructor(private orderservice : OrderService, private router: Router,
-    private cd: ChangeDetectorRef, private http: HttpClient , cartservice : CartService , private formbuilder: FormBuilder ,  private userservice: UserService) { }
+    private cd: ChangeDetectorRef, private http: HttpClient ,private cartservice : CartService , private formbuilder: FormBuilder ,  private userservice: UserService) { }
  
   ngOnInit() {
     console.log(`to pay ${this.amount}`)
@@ -104,7 +104,7 @@ export class CheckoutComponent implements OnInit {
     this.orderservice.orderPackage(this.order).subscribe((message)=>
           {
             console.log(message); 
-            
+            this.cartservice.emptycart();
             this.router.navigate(['/userdash'])
             Swal.fire({
               icon: 'success',
