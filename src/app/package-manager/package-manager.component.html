@@ -1,0 +1,53 @@
+<p class="h2 text-center mt-5">View Packaging Material Orders</p>
+    <hr>
+<mat-card *ngIf="orders">
+    <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let order of orders">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <p class="mx-auto">Order Date</p>
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{order.created | date}}
+                </mat-panel-description>
+                
+                </mat-expansion-panel-header>
+                  
+                <div class="row">
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col-3">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="col-3">
+                        <h5>Quantity</h5>
+                    </div>
+                    <div class="col-3">
+                        <h5>Price</h5>
+                    </div>
+                </div>
+
+                <div class="row" *ngFor="let product of order.cart">
+                    <div class="col-3">
+                        <img [src]="'assets/'+product.image" alt="" style="width: 5rem;">
+                    </div>
+                    <div class="col-3 my-auto">
+                        <h5>{{product.name}}</h5>
+                    </div>
+                    <div class="col-3 my-auto">
+                        <h5>{{product.count}}</h5>
+                    </div>
+                    <div class="col-3 my-auto">
+                        <h5>{{product.price}}</h5>
+                    </div>
+                </div>
+                <hr>
+
+                <h4 class="mt-5">Total Amount : {{order.amount}}</h4>
+                  
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>

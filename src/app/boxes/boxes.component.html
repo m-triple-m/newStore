@@ -1,11 +1,11 @@
 <div class="container mt-5">
     <h2 style="color: red;">Moving Boxes</h2>
     <p>Safely pack up your belongings and protect them during the moving process.</p>
-    <h5 class="mt-5">Small Boxes</h5>
-    <p>Rs 30</p>
+    <h5 class="mt-5">{{smallBox.name}}</h5>
+    <p>{{smallBox.price}}</p>
     <div class="row">
         <div class="col-md-4">
-            <img src="assets/small.jpg"  style="outline-style: ridge;height: 5cm;width: 8cm;">
+            <img src="assets/{{smallBox.image}}"  style="outline-style: ridge;height: 5cm;width: 8cm;">
         </div>
         <div class="col-md">
             <p><mat-icon matPreffix>check_circle</mat-icon>Suitable for videos/DVDs/CDs, household items, books, tools and other smaller heavy items
@@ -20,14 +20,14 @@
                 <br>
                 <mat-icon matPreffix>check_circle</mat-icon>Reusable
             </p>
-            <div class="row"><button class=" btn btn-danger" (click)="smallboxneg()">-</button><h2> {{smallboxcount}} </h2><button class="btn btn-primary" (click)="smallboxpos()">+</button></div>
+            <div class="row"><button class=" btn btn-danger" (click)="smallboxneg()">-</button><h2> {{smallBox.count}} </h2><button class="btn btn-primary" (click)="smallboxpos()">+</button></div>
         </div>
     </div>
-    <h5 class="mt-5">Medium Boxes</h5>
-    <p>Rs 50</p>
+    <h5 class="mt-5">{{mediumBox.name}}</h5>
+    <p>{{smallBox.price}}</p>
     <div class="row">
         <div class="col-md-4">
-            <img src="assets/medium.jpg"  style="outline-style: ridge;height: 5cm;width: 8cm;">
+            <img src="assets/{{mediumBox.image}}"  style="outline-style: ridge;height: 5cm;width: 8cm;">
         </div>
         <div class="col-md">
             <p><mat-icon matPreffix>check_circle</mat-icon>Suitable for medium-weight items such as kitchen utensils, clothing, toys etc.
@@ -42,14 +42,14 @@
                 <br>
                 <mat-icon matPreffix>check_circle</mat-icon>Reusable
             </p>
-            <div class="row"><button class=" btn btn-danger" (click)="mediumboxneg()">-</button><h2> {{mediumboxcount}} </h2><button class="btn btn-primary" (click)="mediumboxpos()">+</button></div>
+            <div class="row"><button class=" btn btn-danger" (click)="mediumboxneg()">-</button><h2> {{mediumBox.count}} </h2><button class="btn btn-primary" (click)="mediumboxpos()">+</button></div>
         </div>
     </div>
-    <h5 class="mt-5">Medium Boxes (Extra strong)</h5>
-    <p>Rs 75</p>
+    <h5 class="mt-5">{{mediumBox2.name}}</h5>
+    <p>{{mediumBox2.price}}</p>
     <div class="row">
         <div class="col-md-4">
-            <img src="assets/mediumx.jpg"  style="outline-style: ridge;height: 5cm;width: 8cm;">
+            <img src="assets/{{mediumBox2.image}}"  style="outline-style: ridge;height: 5cm;width: 8cm;">
         </div>
         <div class="col-md">
             <p><mat-icon matPreffix>check_circle</mat-icon>Suitable for heavier items
@@ -64,14 +64,14 @@
                 <br>
                 <mat-icon matPreffix>check_circle</mat-icon>Reusable
             </p>
-            <div class="row"><button class=" btn btn-danger" (click)="mediumboxxneg()">-</button><h2> {{mediumboxxcount}} </h2><button class="btn btn-primary" (click)="mediumboxxpos()">+</button></div>
+            <div class="row"><button class=" btn btn-danger" (click)="mediumboxxneg()">-</button><h2> {{mediumBox2.count}} </h2><button class="btn btn-primary" (click)="mediumboxxpos()">+</button></div>
         </div>
     </div>
-    <h5 class="mt-5">Large Box</h5>
-    <p>Rs 100</p>
+    <h5 class="mt-5">{{largeBox.name}}</h5>
+    <p>{{largeBox.price}}</p>
     <div class="row">
         <div class="col-md-4">
-            <img src="assets/large.jpg"  style="outline-style: ridge;height: 5cm;width: 8cm;">
+            <img src="assets/{{largeBox.image}}"  style="outline-style: ridge;height: 5cm;width: 8cm;">
         </div>
         <div class="col-md">
             <p><mat-icon matPreffix>check_circle</mat-icon>Perfect box for linen, sheets, towels and clothing – multi purpose
@@ -86,14 +86,14 @@
                 <br>
                 <mat-icon matPreffix>check_circle</mat-icon>Reusable
             </p>
-            <div class="row"><button class=" btn btn-danger" (click)="largeboxneg()">-</button><h2> {{largeboxcount}} </h2><button class="btn btn-primary" (click)="largeboxpos()">+</button></div>
+            <div class="row"><button class=" btn btn-danger" (click)="largeboxneg()">-</button><h2> {{largeBox.count}} </h2><button class="btn btn-primary" (click)="largeboxpos()">+</button></div>
         </div>
     </div> 
-    <h5 class="mt-5">Wardrobe Box</h5>
-    <p>Rs 750</p>
+    <h5 class="mt-5">{{wardrobeBox.name}}</h5>
+    <p>{{wardrobeBox.price}}</p>
     <div class="row">
         <div class="col-md-4">
-            <img src="assets/wbox.jpg"  style="outline-style: ridge;height: 5cm;width: 8cm;">
+            <img src="assets/{{wardrobeBox.image}}"  style="outline-style: ridge;height: 5cm;width: 8cm;">
         </div>
         <div class="col-md">
             <p><mat-icon matPreffix>check_circle</mat-icon>Save time when packing up your clothing, and keep it wrinkle free, by keeping items on the hanger
@@ -108,13 +108,13 @@
                 <br>
                 <mat-icon matPreffix>check_circle</mat-icon>Made from responsible sources & Reusable
             </p>
-            <div class="row"><button class=" btn btn-danger" (click)="wardboxneg()">-</button><h2> {{wardboxcount}} </h2><button class="btn btn-primary" (click)="wardboxpos()">+</button></div>
+            <div class="row"><button class=" btn btn-danger" (click)="wardboxneg()">-</button><h2> {{wardrobeBox.count}} </h2><button class="btn btn-primary" (click)="wardboxpos()">+</button></div>
         </div>
     </div>
 <div class="row">
     <button class="btn btn-primary mt-5 col-md" (click)="orderbox()"> Submit </button>
     <div class="col-md-1"></div>
-    <button class="btn btn-primary  mt-5 col-md" (click)="orderbox()"> Add to Cart </button>
+    <button class="btn btn-primary  mt-5 col-md" (click)="addToCart()"> Add to Cart </button>
 </div>
 <div class="col-md-6 mt-5">
     <h2 >Packing Supplies</h2>

@@ -9,6 +9,7 @@ export class UserDashboardComponent implements OnInit {
 
   showOrders = true;
   showEditform = false;
+  showPackages = false;
   
   user;
 
@@ -28,11 +29,17 @@ export class UserDashboardComponent implements OnInit {
     this.hideall();
     this.showEditform = true;
   }
+
+  togglePackages(){
+    this.hideall();
+    this.showPackages = true;
+  }
   
 
   hideall(){
     this.showOrders = false;
     this.showEditform = false;
+    this.showPackages = false;
   }
 
 }

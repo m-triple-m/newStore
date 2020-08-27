@@ -15,6 +15,9 @@
             <button mat-button class="btn-block mt-3" (click)="toggleShowOrders()" style="background-color: rgba(240, 248, 255, 0.1);">
                 Manage Orders
             </button>
+            <button mat-button class="btn-block mt-3" (click)="togglePackages()" style="background-color: rgba(240, 248, 255, 0.1);">
+                View Ordered Package
+            </button>
 
         </div>
         <div class="col-10 panel">
@@ -24,6 +27,7 @@
                     <hr>
                     <app-orders-placed *ngIf="showOrders"></app-orders-placed>
                     <app-update-profile *ngIf="showEditform"></app-update-profile>
+                    <app-package-manager *ngIf="showPackages"></app-package-manager>
                 </div>
             </div>
         </div>

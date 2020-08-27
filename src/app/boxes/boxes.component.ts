@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-boxes',
@@ -6,58 +7,68 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boxes.component.css']
 })
 export class BoxesComponent implements OnInit {
-smallboxcount=0;
-mediumboxcount=0;
-mediumboxxcount=0;
-largeboxcount=0;
-wardboxcount=0;
-  constructor() { }
+
+  smallBox = {name : 'Small Box', count: 0, price: 30, image : 'small.jpg'};
+  mediumBox = {name : 'Medium Box', count: 0, price: 50, image : 'medium.jpg'};
+  mediumBox2 = {name : 'Medium Box (Extra strong)', count: 0, price: 75, image : 'mediumx.jpg'};
+  largeBox = {name : 'Large Box', count: 0, price: 100, image : 'large.jpg'};
+  wardrobeBox = {name : 'Wardrobe Box', count: 0, price: 750, image : 'wbox.jpg'};
+
+  constructor(private cartservice: CartService) { }
 
   ngOnInit(): void {
   }
   smallboxneg(){
-    if(this.smallboxcount>0){
-      this.smallboxcount--;
+    if(this.smallBox.count>0){
+      this.smallBox.count--;
     }
     
   }
   smallboxpos(){
-    this.smallboxcount++;
+    this.smallBox.count++;
   }
   mediumboxneg(){
-    if(this.mediumboxcount>0){
-      this.mediumboxcount--;
+    if(this.mediumBox.count>0){
+      this.mediumBox.count--;
     }
   }
   mediumboxpos(){
-    this.mediumboxcount++;
+    this.mediumBox.count++;
   }
   mediumboxxneg(){
-    if(this.mediumboxxcount>0){
-      this.mediumboxxcount--;
+    if(this.mediumBox2.count>0){
+      this.mediumBox2.count--;
     }
   }
   mediumboxxpos(){
-    this.mediumboxxcount++;
+    this.mediumBox2.count++;
   }
   largeboxneg(){
-    if(this.largeboxcount>0){
-      this.largeboxcount--;
+    if(this.largeBox.count>0){
+      this.largeBox.count--;
     }
   }
   largeboxpos(){
-    this.largeboxcount++;
+    this.largeBox.count++;
   }
   wardboxneg(){
-    if(this.wardboxcount>0){
-      this.wardboxcount--;
+    if(this.wardrobeBox.count>0){
+      this.wardrobeBox.count--;
     }
   }
   wardboxpos(){
-    this.wardboxcount++;
+    this.wardrobeBox.count++;
   }
   orderbox(){
     
+  }
+
+  addToCart(){
+    this.cartservice.additem(this.smallBox);
+    this.cartservice.additem(this.mediumBox);
+    this.cartservice.additem(this.largeBox);
+    this.cartservice.additem(this.mediumBox2);
+    this.cartservice.additem(this.wardrobeBox);
   }
 
 }

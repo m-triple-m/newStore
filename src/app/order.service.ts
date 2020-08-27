@@ -24,4 +24,12 @@ export class OrderService {
   getOrderByUser(id){
     return this.http.get(this.url+'/getbyuser/'+id);
   }
+
+  orderPackage(formdata){
+    return this.http.post('http://localhost:3000/package/add', formdata);
+  }
+
+  getOrderedPackagesByUser(id){
+    return this.http.get('http://localhost:3000/package/getbyuser/'+id);
+  }
 }

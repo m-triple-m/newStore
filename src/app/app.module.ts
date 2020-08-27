@@ -45,6 +45,9 @@ import { SuppliesComponent } from './supplies/supplies.component';
 import { LocationResultsComponent } from './location-results/location-results.component';
 import { PackingTipsComponent } from './packing-tips/packing-tips.component';
 import { StorageTipsComponent } from './storage-tips/storage-tips.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PackageManagerComponent } from './package-manager/package-manager.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +84,9 @@ import { StorageTipsComponent } from './storage-tips/storage-tips.component';
     LocationResultsComponent,
     PackingTipsComponent,
     StorageTipsComponent,
+    CartComponent,
+    CheckoutComponent,
+    PackageManagerComponent,
     
   ],
   imports: [
