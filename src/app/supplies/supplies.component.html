@@ -60,8 +60,15 @@
             <div class="row"><button class=" btn btn-danger">-</button><h2>0</h2><button class="btn btn-primary">+</button></div>
         </div>
     </div>
-    
-    
-
-
+    <div class="row">
+        <button class="btn btn-primary mt-5 col-md" (click)="ordersupplies()"> Submit </button>
+        <div class="col-md-1"></div>
+        <button class="btn btn-primary  mt-5 col-md" (click)="ordersupplies()"> Add to Cart </button>
+    </div>
+    <div class="col-md-6 mt-5">
+        <h2 >Packing Supplies</h2>
+        <a [routerLink]="['/supplies']" routerLinkActive="router-link-active" > <br> See our range of packing supplies </a>
+        <img src="assets/supplies.jpg" [routerLink]="['/supplies']" routerLinkActive="router-link-active"  alt="" style="height: 6cm;width: 10cm;outline-style: ridge;">
+        
+    </div>
 </div>
