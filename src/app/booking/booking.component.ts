@@ -23,8 +23,8 @@ export class BookingComponent implements OnInit {
   location;
   selectedLocation;
   locations;
-
-  spaceOptions = [15, 25, 50, 100, 300, 500];
+  
+  spaceOptions = [0, 0, 0, 0, 0];
 
   next = faArrowRight;
   prev = faArrowLeft;
@@ -92,13 +92,22 @@ export class BookingComponent implements OnInit {
 
     this.locations =  this.locations.filter((loc) => {
       // console.log(loc.area+'  '+this.space);
+      
+        this.spaceOptions[0]=this.space-10;
+        this.spaceOptions[1]=this.space-5;
+        this.spaceOptions[2]=this.space;
+        this.spaceOptions[3]=this.space+5;
+        this.spaceOptions[4]=this.space+10;
+      
       return loc.area >= this.space;
+
     })
 
-    this.spaceOptions = this.spaceOptions.filter(opt => {
-      return opt > this.space && opt < this.space+100;
-    })
-    console.log(this.spaceOptions)
+    // this.spaceOptions = this.spaceOptions.filter(opt => {
+    //   return opt > this.space && opt < this.space;
+    // })
+    
+    console.log(this.spaceOptions);
     console.log(this.space);
 
     this.locations = this.locations.map(loc => {

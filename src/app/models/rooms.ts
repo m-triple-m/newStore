@@ -94,7 +94,7 @@ export class AllRooms {
         new Thing('assets/washing.jpg','Washing Machine',2),
         new Thing('assets/tumble.jpg','Tumbler Dryer',2),
         new Thing('assets/dryingrack.jpg','Drying Rack',1.5),
-        new Thing('assets/ironing','Ironing Board',1),
+        new Thing('assets/ironing.jpg','Ironing Board',1),
         new Thing('assets/laundry.jpg', 'Laundry Basket', 0.5),
         new Thing('assets/linen.jpg', 'Linen Rack', 0.5),
         new Thing('assets/vaccum.jpg', 'Vaccum Cleaner', 0.5),

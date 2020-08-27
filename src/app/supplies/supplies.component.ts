@@ -12,4 +12,7 @@ export class SuppliesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ordersupplies(){
+    
+  }
 }

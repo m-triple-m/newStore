@@ -1,4 +1,26 @@
-<p class="h2 text-center mt-5">View Orders</p>
+<div class="container">
+    <h1 style="text-align: center;">User Profile</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <label for="">Username : </label>
+                <h5> &nbsp;{{user.username}}</h5>
+            </div>
+            <div class="row">
+                <label for="">Name : </label>
+                <h5> &nbsp;{{user.name}}</h5>
+            </div>
+            <div class="row">
+                <label for="">Email : </label>
+                <h5> &nbsp;{{user.email}}</h5>
+            </div>
+            <div class="row">
+                <label for="">Mobile : </label>
+                <h5> &nbsp;{{user.contact}}</h5>
+            </div>
+        </div>
+    </div>
+    <p class="h2 text-center mt-5">View Orders</p>
     <hr>
 <mat-card *ngIf="orders">
     <mat-card-content>
@@ -42,3 +64,4 @@
         </mat-accordion>
     </mat-card-content>
 </mat-card>
+</div>
